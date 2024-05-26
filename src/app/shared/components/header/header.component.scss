@@ -1,0 +1,11 @@
+
+
+.header {
+  justify-content: space-between;
+  &__menu-group {
+    align-items: center;
+    display: flex;
+    height: inherit;
+    gap: 4px
+  }
+}
