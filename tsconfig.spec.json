@@ -3,9 +3,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "typeRoots": ["node_modules/@angular/material", "node_modules/@types"],
     "types": [
-      "jasmine"
-    ]
+      "jasmine",
+    ],
   },
   "include": [
     "src/**/*.spec.ts",
