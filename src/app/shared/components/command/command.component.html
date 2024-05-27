@@ -1,0 +1,9 @@
+<code>{{ command() }}</code>
+<button
+  [cdkCopyToClipboard]="command()"
+  mat-icon-button
+  style="font-size:20px"
+  [ariaLabel]="ariaLabel()"
+>
+  <mat-icon>content_copy</mat-icon>
+</button>

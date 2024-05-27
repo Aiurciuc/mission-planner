@@ -1,0 +1,14 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  code {
+    background-color: #eee;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 0 3px;
+    height: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+}

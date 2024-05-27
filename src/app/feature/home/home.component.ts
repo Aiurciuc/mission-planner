@@ -1,14 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommandComponent } from '@shared/components/command/command.component';
+import { LayoutComponent } from '@shared/components/layout/layout.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [ LayoutComponent, CommandComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  activatedRoute = inject(ActivatedRoute);
-  title = this.activatedRoute.snapshot.title || '';
 }
