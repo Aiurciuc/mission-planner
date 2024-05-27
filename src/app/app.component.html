@@ -1,1 +1,2 @@
-<app-header title="HOME"></app-header>
+<app-header [title]="(title |async) ??''"></app-header>
+<router-outlet></router-outlet>

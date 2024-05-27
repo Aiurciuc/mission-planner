@@ -1,39 +1,47 @@
 <mat-toolbar class="header">
   <section class="header__menu-group">
-    <app-logo></app-logo>
+    <a routerLink="/home" class="logo">
+      <app-logo></app-logo>
+    </a>
 
-    <button
-      mat-icon-button
-      [matMenuTriggerFor]="menu"
-      aria-label="Menu"
-    >
+    <a mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
       <mat-icon>menu</mat-icon>
-    </button>
+    </a>
 
     <h1>{{ title() }}</h1>
-
   </section>
-  <button
-      mat-icon-button
-      aria-label="Share"
-      >
-    
-      <mat-icon>share</mat-icon>
-    </button>
+  <button mat-icon-button aria-label="Share">
+    <mat-icon>share</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <a
+    mat-menu-item
+    routerLink="/home"
+    ariaCurrentWhenActive="page"
+    routerLinkActive="active"
+  >
     <mat-icon>home</mat-icon>
     <span>Home</span>
-  </button>
-  <button mat-menu-item>
+  </a>
+  <a
+    mat-menu-item
+    routerLink="/planner"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
     <mat-icon> edit</mat-icon>
 
     <span>Planner</span>
-  </button>
-  <button mat-menu-item>
+  </a>
+  <a
+    mat-menu-item
+    routerLink="/player"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
     <mat-icon>play_circle</mat-icon>
     <span>Player</span>
-  </button>
+  </a>
 </mat-menu>
