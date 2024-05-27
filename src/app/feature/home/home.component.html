@@ -1,1 +1,93 @@
-<h1>{{title}}</h1>
+<app-layout>
+  <h1>Mission Planner</h1>
+
+  <!-- Description section -->
+  <section>
+    <h3>Description</h3>
+    <p>
+      This app is design to serve in planning missions of an industrial robot.
+      It empowers operators to create and visualize robot movement.
+      <br />
+      The user can add the points of interest that the robot should reach ( 2D
+      points) in a specific order. Then he can control the movement of the robot
+      between those points.
+    </p>
+  </section>
+
+  <!-- Structure section -->
+
+  <section>
+    <h3>Structure</h3>
+    <p>The app contains three pages:</p>
+    <ul>
+      <li>
+        Home page: the current page. It contains information about the
+        application and how you can use it.
+      </li>
+      <li>
+        Planner page: where you can add, remove and manage the points which the
+        robot will reach during the mission.
+      </li>
+      <li>
+        Player page: where you can visualize and control the robot's mission .
+      </li>
+    </ul>
+  </section>
+
+  <!-- Running section -->
+
+  <section>
+    <h3>Running the app</h3>
+    <p>In order to run the app, you need to follow the next steps:</p>
+    <ol>
+      <li>
+        <strong>Prerequisites :</strong> Be sure that you have an environment
+        that have <strong>git</strong>, <strong>node</strong> and
+        <strong>npm</strong> installed.
+      </li>
+      <br />
+      <li>
+        <strong>Clone the application's code:</strong> First, you need to clone
+        the code. Please run the following command: <br />
+        <app-command
+          command="git clone https://github.com/Aiurciuc/mission-planner.git"
+          ariaLabel="Copy git clone command"
+        />
+      </li>
+      <br />
+      <li>
+        <strong>Install the node packages:</strong> Before starting the
+        application, you need to install the node packages by executing the
+        following commandȘ <br />
+        <app-command
+          command="npm install"
+          ariaLabel="Copy install packages command"
+        />
+      </li>
+
+      <li>
+        <strong>Start the application:</strong> In order to start the
+        application you need to run the following command: <br />
+        <app-command command="npm serve" ariaLabel="Copy app start command" />
+      </li>
+    </ol>
+  </section>
+
+  <!-- Build section -->
+  <section>
+    <h3>Build</h3>
+    <p>
+      Run <app-command command="npm run build" ariaLabel="Build the app" /> to
+      build the project. The build artifacts will be stored in the
+    </p>
+  </section>
+
+  <!-- Testing section -->
+  <section>
+    <h3>Running unit tests</h3>
+    <p>
+      Run <app-command command="npm test" ariaLabel="Test the app" /> to execute
+      the unit tests via Karma.
+    </p>
+  </section>
+</app-layout>
