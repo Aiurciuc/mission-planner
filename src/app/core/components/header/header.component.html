@@ -1,0 +1,54 @@
+<mat-toolbar class="header">
+  <section class="header__menu-group">
+    <a routerLink="/home" class="logo">
+      <app-logo />
+    </a>
+
+    <a mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+      <mat-icon>menu</mat-icon>
+    </a>
+
+    <h1>{{ title() }}</h1>
+  </section>
+
+  <a
+    href="https://github.com/Aiurciuc/mission-planner"
+    mat-icon-button
+    aria-label="Share"
+  >
+    <mat-icon>share</mat-icon>
+  </a>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <a
+    mat-menu-item
+    aria-label="Home"
+    routerLink="/home"
+    ariaCurrentWhenActive="page"
+    routerLinkActive="active"
+  >
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+  <a
+    mat-menu-item
+    routerLink="/planner"
+    aria-label="Planner"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+    <mat-icon> edit</mat-icon>
+    <span>Planner</span>
+  </a>
+  <a
+    mat-menu-item
+    routerLink="/player"
+    aria-label="Player"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+    <mat-icon>play_circle</mat-icon>
+    <span>Player</span>
+  </a>
+</mat-menu>
