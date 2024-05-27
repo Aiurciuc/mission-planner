@@ -1,7 +1,7 @@
 <mat-toolbar class="header">
   <section class="header__menu-group">
     <a routerLink="/home" class="logo">
-      <app-logo></app-logo>
+      <app-logo />
     </a>
 
     <a mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
@@ -10,9 +10,14 @@
 
     <h1>{{ title() }}</h1>
   </section>
-  <button mat-icon-button aria-label="Share">
+
+  <a
+    href="https://github.com/Aiurciuc/mission-planner"
+    mat-icon-button
+    aria-label="Share"
+  >
     <mat-icon>share</mat-icon>
-  </button>
+  </a>
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
@@ -32,7 +37,6 @@
     ariaCurrentWhenActive="page"
   >
     <mat-icon> edit</mat-icon>
-
     <span>Planner</span>
   </a>
   <a
