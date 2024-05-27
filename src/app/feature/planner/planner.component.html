@@ -5,5 +5,12 @@
     <h3>Add new point</h3>
     <app-new-point (newPoint)="onAddNewPoint($event)"/>
   </section>
+
+  <section>
+    <h3>
+      Existing Points
+    </h3>
+    <app-point-table (removePoint)="onRemovePoint($event)" [points]="points()"/>
+  </section>
   
 </app-layout>

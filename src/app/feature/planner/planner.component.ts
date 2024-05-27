@@ -1,34 +1,36 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-
 import { ActivatedRoute } from '@angular/router';
 import { LayoutComponent } from '@shared/components/layout/layout.component';
 import { NewPointComponent } from './components/new-point/new-point.component';
-import { Point } from '@shared/models/Points';
+import { IndexedPoint, Point } from '@shared/models/Points';
+import { PointTableComponent } from './components/point-table/point-table.component';
+import { PointsService } from '@shared/services/points.service';
 
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
 
 @Component({
   selector: 'app-planner',
   standalone: true,
   imports: [
     LayoutComponent,
-    NewPointComponent
+    NewPointComponent,
+    PointTableComponent
   ],
   templateUrl: './planner.component.html',
   styleUrl: './planner.component.scss',
 })
 export class PlannerComponent {
   activatedRoute = inject(ActivatedRoute);
+  pointsService= inject(PointsService);
+
   title = this.activatedRoute.snapshot.title || '';
+  points = this.pointsService.points;
+
 
   onAddNewPoint(point: Point) {
-    console.log(point)
+    this.pointsService.addPoint(point);
+  }
+
+  onRemovePoint(point: IndexedPoint) {
+    this.pointsService.removePoint(point);
   }
 }
