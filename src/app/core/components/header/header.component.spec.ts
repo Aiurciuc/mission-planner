@@ -70,7 +70,6 @@ describe('HeaderComponent', () => {
       const items = await menu.getItems({ selector: '[aria-label="Home"]' });
 
       const host = await items[0].host();
-      console.log(host);
       const link = await host.getAttribute('routerLink');
 
       expect(link).toBe('/home');
@@ -82,7 +81,6 @@ describe('HeaderComponent', () => {
       const items = await menu.getItems({ selector: '[aria-label="Planner"]' });
 
       const host = await items[0].host();
-      console.log(host);
       const link = await host.getAttribute('routerLink');
 
       expect(link).toBe('/planner');
@@ -93,7 +91,6 @@ describe('HeaderComponent', () => {
       const items = await menu.getItems({ selector: '[aria-label="Player"]' });
 
       const host = await items[0].host();
-      console.log(host);
       const link = await host.getAttribute('routerLink');
 
       expect(link).toBe('/player');

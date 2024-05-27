@@ -69,7 +69,6 @@ describe('AppComponent', () => {
     component = fixture.componentInstance;
     
     component.title.subscribe(title => {
-      console.log(title)
       expect(title).toEqual('');
       
     })
