@@ -22,10 +22,10 @@ export class AppComponent {
   public activatedRoute = inject(ActivatedRoute);
   public router = inject(Router);
 
-  title =this.router.events.pipe(
+  title = this.router.events.pipe(
     filter((e) => e instanceof NavigationEnd),
     switchMap(() =>
-      this.activatedRoute?.firstChild?.title ?? of('')
+      this.activatedRoute?.firstChild?.title || of('')
        
     )
    
