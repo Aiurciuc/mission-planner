@@ -10,7 +10,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Point } from '@shared/models/Points';
+import { MAX_X, MAX_Y, Point } from '@shared/models/Points';
 
 export interface PointForm {
   name: FormControl<string | null>;
@@ -36,11 +36,14 @@ export interface PointForm {
 export class NewPointComponent {
   pointFormRef = viewChild<NgForm>('pointFormRef');
   newPoint = output<Point>();
+  MAX_X = MAX_X;
+  MAX_Y = MAX_Y;
+
 
   pointForm = new FormGroup<PointForm>({
     name: new FormControl<string | null>(null, [Validators.required]),
-    xPoint: new FormControl<number | null>(null, [Validators.required]),
-    yPoint: new FormControl<number | null>(null, [Validators.required]),
+    xPoint: new FormControl<number | null>(null, [Validators.required,  Validators.max(MAX_X), Validators.min(0)]),
+    yPoint: new FormControl<number | null>(null, [Validators.required, Validators.max(MAX_Y), Validators.min(0)]),
   });
 
   onSubmit() {

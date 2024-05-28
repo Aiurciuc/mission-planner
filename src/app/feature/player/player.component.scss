@@ -1,0 +1,15 @@
+.player{
+  display: flex;
+  gap: 50px;
+
+  &__mission-map{
+    flex-basis: 80%;
+    &__header{
+      display: flex;
+    }
+  }
+  &__mission-list{
+    flex-basis: 20%;
+  
+  }
+}

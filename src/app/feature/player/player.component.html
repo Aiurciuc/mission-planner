@@ -1,1 +1,14 @@
-<h1>{{title}}</h1>
+<app-layout>
+  <h1>{{ title }}</h1>
+  <div class="player">
+    <section class="player__mission-map">
+      <app-mission-map [points]="points" />
+    </section>
+
+    <section class="player__mission-list">
+      <h3>Mission List</h3>
+      <app-mission-list  [points]="points"/>
+    </section>
+  </div>
+
+</app-layout>

@@ -16,15 +16,24 @@
 
     @if (pointForm.get('xPoint')?.hasError('required')) {
     <mat-error>X is required</mat-error>
+    } @if (pointForm.get('xPoint')?.hasError('max')) {
+    <mat-error>X should be lower then {{ MAX_X }}</mat-error>
 
+    } @if (pointForm.get('xPoint')?.hasError('min')) {
+    <mat-error>X should be a bigger then 0</mat-error>
     }
   </mat-form-field>
 
   <mat-form-field>
     <input matInput type="number" formControlName="yPoint" placeholder="Y" />
-    @if (pointForm.get('xPoint')?.hasError('required')) {
+    @if (pointForm.get('yPoint')?.hasError('required')) {
     <mat-error>Y is required</mat-error>
+    }
+   @if (pointForm.get('yPoint')?.hasError('max')) {
+    <mat-error>Y should be lower then {{ MAX_Y }}</mat-error>
 
+    } @if (pointForm.get('yPoint')?.hasError('min')) {
+    <mat-error>Y should be a bigger then 0</mat-error>
     }
   </mat-form-field>
   <button

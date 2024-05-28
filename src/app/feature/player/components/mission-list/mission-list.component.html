@@ -1,0 +1,18 @@
+@if(points().length > 0){
+<table mat-table [dataSource]="points()" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="MISSION_COLUMNS"></tr>
+  <tr mat-row *matRowDef="let row; columns: MISSION_COLUMNS"></tr>
+</table>
+} @else{
+<h1>No points found</h1>
+}

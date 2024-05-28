@@ -20,7 +20,7 @@ export class PointsService {
       id: Math.max(...this.#points().map(point => point.id))+1
     }
   }
-
+ 
 
   #resetIds(points: IndexedPoint[]){
     return points.map((point, index) => ({...point, id: index+1}))
