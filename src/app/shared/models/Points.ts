@@ -12,4 +12,7 @@ export interface IndexedPoint {
 }
 
 
+export const MAX_X= 2000;
+export const MAX_Y= 2000;
+
 export const POINTS_COLUMNS = ['id','name', 'xPoint', 'yPoint', 'deleteButton'];

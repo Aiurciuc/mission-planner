@@ -1,0 +1,10 @@
+<app-area class="mission-map" #area>
+  @for (point of points(); track point.id) {
+    <app-point
+      [areaWidthRatio]="areaWidthRatio()"
+      [areaHeightRatio]="areaHeightRatio()"
+      [point]="point"
+    ></app-point>
+
+  }
+</app-area>

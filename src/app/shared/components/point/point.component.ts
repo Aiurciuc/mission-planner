@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, effect, input } from '@angular/core';
 import { IndexedPoint } from '@shared/models/Points';
 
 @Component({
@@ -10,7 +10,15 @@ import { IndexedPoint } from '@shared/models/Points';
 })
 export class PointComponent {
   point = input.required<IndexedPoint>();
+  areaWidthRatio = input.required<number>();
+  areaHeightRatio = input.required<number>();
 
-  
+
+  constructor() {
+    effect(() => {
+      console.log(this.point());
+    });
+    
+  }
 
 }
