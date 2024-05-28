@@ -1,20 +1,14 @@
 <app-layout>
   <h1>{{ title }}</h1>
   <div class="player">
-    <!-- Mission Section-->
     <section class="player__mission-map">
-      <h3>Mission map</h3>
       <app-mission-map [points]="points" />
     </section>
 
-    <!-- Mission -->
-    <section class="player__list">
-      <h3>Area map</h3>
-      <!-- <app-area class="players" >
-          
-        </app-area> -->
+    <section class="player__mission-list">
+      <h3>Mission List</h3>
+      <app-mission-list  [points]="points"/>
     </section>
   </div>
 
-  <!-- </div> -->
 </app-layout>

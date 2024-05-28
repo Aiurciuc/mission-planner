@@ -1,5 +1,12 @@
-.mission-map{
-  height: 60vh;
-  display: flex;
-  width: 100%;
+.mission{
+  &__header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &__map{
+    height: 60vh;
+    display: flex;
+    width: 100%;
+  }
 }

@@ -1,10 +1,23 @@
-<app-area class="mission-map" #area>
-  @for (point of points(); track point.id) {
-    <app-point
-      [areaWidthRatio]="areaWidthRatio()"
-      [areaHeightRatio]="areaHeightRatio()"
-      [point]="point"
-    ></app-point>
+<div class="mission__header">
+  <h3>Mission map</h3>
 
-  }
-</app-area>
+
+  <button mat-flat-button color="primary" aria-label="Example icon button with a delete icon">
+    Play<mat-icon>play_arrow</mat-icon>
+  </button>
+
+  <button mat-flat-button color="primary" aria-label="Example icon button with a delete icon">
+    Stop<mat-icon class="icon">stop</mat-icon>
+  </button>
+
+</div>
+  <app-area class="mission__map" #area>
+    @for (point of points(); track point.id) {
+      <app-point
+        [areaWidthRatio]="areaWidthRatio()"
+        [areaHeightRatio]="areaHeightRatio()"
+        [point]="point"
+      ></app-point>
+  
+    }
+  </app-area>
