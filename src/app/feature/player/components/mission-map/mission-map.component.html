@@ -1,23 +1,46 @@
 <div class="mission__header">
   <h3>Mission map</h3>
 
-
-  <button mat-flat-button color="primary" aria-label="Example icon button with a delete icon">
+  <button
+    mat-flat-button
+    color="primary"
+    aria-label="Example icon button with a delete icon"
+    [disabled]="play() || points().length === 0"
+    (click)="onPlay()"
+  >
     Play<mat-icon>play_arrow</mat-icon>
   </button>
 
-  <button mat-flat-button color="primary" aria-label="Example icon button with a delete icon">
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="!play()"
+    aria-label="Example icon button with a delete icon"
+    (click)="onPause()"
+  >
     Stop<mat-icon class="icon">stop</mat-icon>
   </button>
-
 </div>
-  <app-area class="mission__map" #area>
-    @for (point of points(); track point.id) {
-      <app-point
+<div #area>
+
+  <app-area class="mission__map" >
+    @if (robotPoint()!== null) {
+      <app-robot
         [areaWidthRatio]="areaWidthRatio()"
         [areaHeightRatio]="areaHeightRatio()"
-        [point]="point"
-      ></app-point>
+        [top]="top()"
+        [point]="robotPoint()?? points()[0]"
+      />
   
     }
+    @for (point of points(); track point.id) {
+      <app-point
+      [areaWidthRatio]="areaWidthRatio()"
+      [areaHeightRatio]="areaHeightRatio()"
+      [point]="point"
+      [top]="top()"
+      />
+    }
+  
   </app-area>
+</div>

@@ -47,7 +47,6 @@ export class NewPointComponent {
   });
 
   onSubmit() {
-    console.log(this.pointForm);
     if (this.pointForm.valid) {
       this.newPoint.emit({
         name: this.pointForm.value.name ?? '',

@@ -1,3 +1,7 @@
-<div class="point" [style.top.px]="point().yPoint/areaHeightRatio()" [style.left.px]="point().xPoint/areaWidthRatio()">
+<div
+  class="point"
+  [style.top.px]="(point().yPoint / areaHeightRatio())+top()"
+  [style.left.px]="(point().xPoint / areaWidthRatio())"
+>
   {{ point().id }}
 </div>
