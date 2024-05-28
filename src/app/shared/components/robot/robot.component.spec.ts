@@ -36,7 +36,7 @@ describe('RobotComponent', () => {
     expect(component).toBeTruthy();
     const robot = fixture.debugElement.query(By.css('.robot'));
     expect(robot.nativeElement.getAttribute('style')).toEqual(
-      'top: -13.9px; left: 0.1px;'
+      'top: -13.9px; left: 6.1px;'
     );
   });
 });

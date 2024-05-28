@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { IndexedPoint, MISSION_COLUMNS } from '@shared/models/Points';
 
@@ -8,6 +8,7 @@ import { IndexedPoint, MISSION_COLUMNS } from '@shared/models/Points';
   imports: [MatTableModule],
   templateUrl: './mission-list.component.html',
   styleUrl: './mission-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MissionListComponent {
   points = input.required<IndexedPoint[]>();

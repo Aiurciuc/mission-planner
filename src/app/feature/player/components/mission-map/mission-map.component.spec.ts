@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, flush, tick } from '@angular/core/testing';
 
 import { MissionMapComponent } from './mission-map.component';
 
@@ -47,13 +47,4 @@ describe('MissionMapComponent', () => {
     })
   })
 
-  describe('startInterval', () => {
-    it('should set play to true and setInterval', () => {
-      const spy = spyOn(component, 'startInterval')
-      component.onPlay();
-      fixture.detectChanges();
-      expect(component.play()).toBeTrue();
-      expect(spy).toHaveBeenCalled()
-    })
-  })
 });

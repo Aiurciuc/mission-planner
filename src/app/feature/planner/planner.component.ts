@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LayoutComponent } from '@shared/components/layout/layout.component';
 import { NewPointComponent } from './components/new-point/new-point.component';
@@ -17,6 +17,7 @@ import { PointsService } from '@shared/services/points.service';
   ],
   templateUrl: './planner.component.html',
   styleUrl: './planner.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PlannerComponent {
   activatedRoute = inject(ActivatedRoute);

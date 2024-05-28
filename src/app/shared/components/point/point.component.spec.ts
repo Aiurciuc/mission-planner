@@ -25,6 +25,8 @@ describe('PointComponent', () => {
     fixture.componentRef.setInput('areaWidthRatio', 10)
     fixture.componentRef.setInput('areaHeightRatio', 10)
     fixture.componentRef.setInput('top', 10)
+    fixture.componentRef.setInput('left', 10)
+
     fixture.detectChanges();
   });
 
@@ -35,6 +37,6 @@ describe('PointComponent', () => {
   it('should calculate correct style.top and style.left', () => {
     expect(component).toBeTruthy();
     const point = fixture.debugElement.query(By.css('.point'));
-    expect(point.nativeElement.getAttribute('style')).toEqual('top: 10.1px; left: 0.1px;')
+    expect(point.nativeElement.getAttribute('style')).toEqual('top: 10.1px; left: 10.1px;')
   });
 });

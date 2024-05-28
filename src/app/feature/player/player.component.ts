@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   inject,
 } from '@angular/core';
@@ -14,6 +15,7 @@ import { PointsService } from '@shared/services/points.service';
   imports: [LayoutComponent, MissionMapComponent, MissionListComponent],
   templateUrl: './player.component.html',
   styleUrl: './player.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PlayerComponent {
   
