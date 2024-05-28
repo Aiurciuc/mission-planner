@@ -14,6 +14,12 @@ describe('MissionListComponent', () => {
     
     fixture = TestBed.createComponent(MissionListComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('points',[{
+      id:1,
+      name: 'mock',
+      xPoint: 1,
+      yPoint: 1
+    }]);
     fixture.detectChanges();
   });
 

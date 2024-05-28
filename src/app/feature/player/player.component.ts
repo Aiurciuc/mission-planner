@@ -19,7 +19,7 @@ export class PlayerComponent {
   
   activatedRoute = inject(ActivatedRoute);
   pointsService= inject(PointsService);
-
+  
   points= this.pointsService.points()
 
   title = this.activatedRoute.snapshot.title || '';
