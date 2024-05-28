@@ -15,7 +15,7 @@ export class RobotComponent {
   areaWidthRatio = input.required<number>();
   areaHeightRatio = input.required<number>();
   top = input.required<number>();
-  xOffset = input<number>(0);
+  xOffset = input<number>(6);
   yOffset = input<number>(-24);
 
 }
